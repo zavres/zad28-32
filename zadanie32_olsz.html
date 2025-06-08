@@ -1,0 +1,40 @@
+
+<html>
+ <head>
+ <script type="text/javascript">
+var dom = {
+Wysokosc: '17m',
+kolor: 'Zielony',
+}   
+dom.rokbudowy=2016;
+dom.wypisz=function() {alert('Rok budowy: ' + this.rokbudowy + 'r')}
+dom.wypisz();
+
+dom.ilosc_okien='10';
+dom.dom_pokaz_olsz=function() {alert('Ilość Okien: ' + this.ilosc_okien + ' okien')}
+dom.dom_pokaz_olsz();
+
+function klient(Wysokosc_k,kolor_k,rokbudowy_k)//początek konstruktora
+{
+this.Wysokosc=Wysokosc_k;
+this.kolor=kolor_k;
+this.rokbudowy=rokbudowy_k;
+}
+klient.prototype.wypisz = function ()
+{document.write(this.Wysokosc + ' ' + this.kolor+ ' ' + this.rokbudowy+"<br>");
+};
+var dom1 = new klient("17m", "Zielony", "2016");
+var dom2 = new klient('16,5m', 'Biały', '2021');
+dom1.wypisz();
+dom2.wypisz();
+  function okno_zamknij_olsz()
+{
+window.close()
+}
+ </script>
+ </head>
+<body>
+<br>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_olsz()"/>
+</body>
+</html>

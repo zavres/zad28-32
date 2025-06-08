@@ -1,0 +1,38 @@
+
+<html>
+<body>
+<textarea cols="100%" rows="100%">
+
+    <html>
+        <head>
+        <script type="text/javascript">
+       var dom = {
+       Wysokosc: '17m',
+       kolor: 'Zielony',
+       pokaz: function ()
+       { 
+        document.write(this.Wysokosc + ' ' + this.kolor)
+        }
+       }
+       dom.pokaz();
+       dom.rok_budowy=2016;
+       dom.wypisz=function() {alert('Rok Budowy: ' + this.rok_budowy + 'r')}
+       dom.wypisz();
+       dom.ilosc_okien='10';
+       dom.dom_pokaz_olsz=function() {alert('Ilość Okien: ' + this.ilosc_okien + ' okien')}
+       dom.dom_pokaz_olsz();
+         function okno_zamknij_olsz()
+       {
+       window.close()
+       }
+        </script>
+        </head>
+       <body>
+       <br>
+         
+       <input type="button" value="zamknij okno" onclick="okno_zamknij_olsz()"/>
+       </body>
+       </html>
+       
+
+</textarea></body></html>

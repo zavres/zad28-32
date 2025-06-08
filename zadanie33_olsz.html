@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+</head>
+<body>
+    <form id="loginForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    <button type="button" onclick="login()">Login</button>
+    </form>
+    <p id="loginMessage"></p>
+    <script>
+        class User {
+            constructor(email, password, avatar) {
+                this.email = email;
+                this.password = password;
+                this.avatar = avatar;
+            }
+        }
+
+        class UserList {
+            constructor() {
+                this.users = [];
+            }
+
+            addUser(user) {
+                this.users.push(user);
+            }
+
+            login(email, password) {
+                for (const user of this.users) {
+                    if (user.email === email && user.password === password) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+        const userList = new UserList();
+        const user1 = new User('user1@gmail.com', 'haslo', );
+        const user2 = new User('user2@gmail.com', 'qwerty', );
+        userList.addUser(user1);
+        userList.addUser(user2);
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (userList.login(email, password)) {
+                document.getElementById('loginMessage').textContent = 'Logowanie udało się!';
+            } else {
+                document.getElementById('loginMessage').textContent = 'Logowanie NIE udało się!';
+            }
+        }
+    function okno_zamknij_olsz()
+{
+window.close()
+}
+</script>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_olsz()"/>
+</body>
+</html>
